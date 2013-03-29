@@ -27,7 +27,8 @@ namespace ToDropbox
             if (data.GetDataPresent(DataFormats.Text) || data.GetDataPresent(DataFormats.Html) || data.GetDataPresent(DataFormats.Rtf))
             {
                 String text = (String)data.GetData(DataFormats.Text, true);
-                String now = DateTime.Now.ToShortDateString() + "_" + DateTime.Now.ToString("HHmmss");
+                String now = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+
                 String url = Properties.Settings.Default.urlprefix + now + ".txt" + Properties.Settings.Default.urlsuffix;
                 using (StreamWriter outfile = new StreamWriter(Properties.Settings.Default.savefolder + @"\" + now + ".txt"))
                 {

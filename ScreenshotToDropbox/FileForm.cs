@@ -28,7 +28,7 @@ namespace ToDropbox
             {
 
                 var fileDropList = Clipboard.GetFileDropList();
-                String now = DateTime.Now.ToShortDateString() + "_" + DateTime.Now.ToString("HHmmss");
+                String now = DateTime.Now.ToString("yyyyMMdd_HHmmss");
 
                 if (fileDropList.Count == 1)
                 {                    

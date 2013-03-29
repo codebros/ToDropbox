@@ -26,9 +26,9 @@ namespace ToDropbox
             if (data.GetDataPresent(DataFormats.Bitmap))
             {
                 Image image = (Image)data.GetData(DataFormats.Bitmap, true);
-                String now = DateTime.Now.ToShortDateString() + "_" + DateTime.Now.ToString("HHmmss");
-                image.Save(Properties.Settings.Default.savefolder + @"\" + now + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                String url = Properties.Settings.Default.urlprefix + now + ".jpg" + Properties.Settings.Default.urlsuffix;
+                String now = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                image.Save(Properties.Settings.Default.savefolder + @"\" + now + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                String url = Properties.Settings.Default.urlprefix + now + ".png" + Properties.Settings.Default.urlsuffix;
 
                 // Prevent using images internal thumbnail
                 image.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
